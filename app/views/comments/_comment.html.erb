@@ -1,16 +1,22 @@
 
-<p>
-  <strong>Commenter:</strong>
-  <%= comment.commenter %>
-</p>
- 
-<p>
-  <strong>Comment:</strong>
-  <%= comment.body %>
-</p>
- 
-<p>
-  <%= link_to 'Destroy Comment', [comment.post, comment],
+<table>
+  <thead>
+    <tr>
+      <th>commenter</th>
+      <th>comment</th>
+      <th>user_id</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td><%= comment.commenter %></td>
+        <td><%= comment.body%></td>
+        <td><%= comment.user.name if comment.user.present? %></td>
+        <td><%= link_to 'Destroy Comment', [comment.post, comment],
                method: :delete,
-               data: { confirm: 'Are you sure?' } %>
-</p>
+               data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  </tbody>
+</table>

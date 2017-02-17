@@ -4,7 +4,7 @@ class Post < ActiveRecord::Base
 	validates :sal, :numericality => true
 	validates :name, :uniqueness=>true
 
-	has_many :comment, dependent: :destroy
+	has_many :comments, dependent: :destroy
 	belongs_to :user
 	# validates :title, presence: true, length: { minimum: 5 }
 end
