@@ -8,7 +8,20 @@
   <%= @post.description %>
 </p>
 <h2>Comments</h2>
-<%= render @post.comments %>
+
+<table>
+  <thead>
+    <tr>
+      <th>commenter</th>
+      <th>comment</th>
+      <th>user_id</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  </tbody>
+ <%= render @post.comments %>
+ </table>
+
  
 <h2>Add a comment:</h2>
 <%= render 'comments/form' %>
